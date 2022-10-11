@@ -1,0 +1,13 @@
+---
+title: "Day 8: Wrangling"
+format: html
+editor: source
+---
+
+```{r}
+#Load the tidyverse library here.
+```
+
+```{r}
+spotify_study_playlists <- read.csv("data/spotify.csv")
+```
