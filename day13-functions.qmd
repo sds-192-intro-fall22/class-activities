@@ -1,0 +1,19 @@
+---
+title: "Day 11: Problem Solving"
+format: html
+editor: source
+---
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(tidyverse)
+pit <- read_csv("https://raw.githubusercontent.com/sds-192-intro-fall22/sds-192-public-website-quarto/main/website/data/pit_2015_2020.csv") |>
+  pivot_longer(-State, names_to = "Measure", values_to = "Count") |>
+  separate(Measure, into = c("Shel_Unshel", "Demographic"), sep = " - ") |>
+  separate(Demographic, into = c("Demographic", "Year"), sep = ", ") |>
+  filter(Demographic %in% c("Male", "Female", "Transgender"))
+```
+
+
+
