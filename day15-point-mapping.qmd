@@ -1,0 +1,40 @@
+---
+title: "Day 15: Point Mapping"
+format: html
+editor: source
+---
+
+```{r}
+#| document: show
+library(tidyverse)
+library(echor)
+echo_air_ca <- 
+  echoAirGetFacilityInfo(p_st = "CA", 
+                         qcolumns = "1,8,22,23,100") |>
+  select(-SourceID)
+```
+
+
+# Create a map of ECHO facilities in California, colored by whether or not that facility has had a violation within the last three years
+
+> Note that the CRS for "FacLong", "FacLat" in `echo_air_ca` is 4269. Remember that leaflet expects data in 4326.
+> When I run a Google Search for California coordinates, I get the following (36.7783° N, 119.4179° W) Remember that South and West coordinates will be negative in our code. Google returns coordinates in WGS84 (CRS 4326). 
+
+
+```{r}
+library(sf)
+library(leaflet)
+
+#echo_air_ca_geo <- echo_air_ca |>
+  #st_as_sf(_____) |>
+  #st_transform(_____)
+
+#violation_pal <- colorFactor(_____)
+
+#leaflet() |>
+  #setView() |>
+  #addProviderTiles() |>
+  #addCircleMarkers() |>
+  #addLegend(_____)
+```
+
