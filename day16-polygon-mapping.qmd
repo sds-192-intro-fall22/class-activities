@@ -10,19 +10,19 @@ library(tidyverse)
 library(tidycensus)
 library(sf)
 
-white_alone_ma <- get_decennial(geography = "tract", 
+no_internet_ma <- get_acs(geography = "tract", 
                        state = 25, 
-                       variables = "P1_003N", 
-                       summary_var = "P1_001N",
+                       variables = "B28002_013", 
+                       summary_var = "B28002_001",
                        year = 2020,
                        geometry = TRUE)
 
-#white_alone_ma <- st_read("data/white_alone_ma.shp")
+#no_internet_ma <- st_read("data/no_internet_ma.shp")
 
 ```
 
 
-# Create a three chloropleth maps displaying percent of the population that identifies as a person of color per MA tract in 2020
+# Create a three chloropleth maps displaying percent of the population that does not have Internet access in their households per MA tract in 2020
 
 
 ```{r}
